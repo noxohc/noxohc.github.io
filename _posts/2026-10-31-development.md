@@ -1,8 +1,8 @@
 ---
-title: "개발 공부 기록"
+title: "Development"
 date: 2026-10-30 12:00:00 +0900
-categories: ["개발"]
+categories: ["Development"]
 tags: []
 ---
 
-프로그래밍과 개발 과정에서 학습한 내용을 정리하는 공간입니다.
+Documenting programming concepts, projects, and development experiences.
