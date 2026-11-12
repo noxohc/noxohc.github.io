@@ -4,53 +4,54 @@ layout: default
 
 <link rel="stylesheet" href="{{ '/assets/css/nox.css' | relative_url }}">
 
+
 <style>
-/* 홈 화면에서만 기존 Chirpy 레이아웃 숨기기 */
-#sidebar,
-#topbar-wrapper,
-#panel-wrapper {
+/* NOX - Homepage */
+
+/* 기존 Chirpy 요소 숨기기 */
+body:has(.nox-page) #sidebar,
+body:has(.nox-page) #topbar-wrapper,
+body:has(.nox-page) #panel-wrapper {
   display: none !important;
 }
 
-/* Chirpy 기본 레이아웃 너비 제한 해제 */
-#main-wrapper {
-  margin-left: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
+/* Chirpy 레이아웃 너비 제한 해제 */
+body:has(.nox-page) {
+  background: #050505 !important;
 }
 
-#main-wrapper > .container,
-#main-wrapper > .container-fluid,
-#main-wrapper #main,
-#main-wrapper .row,
-#post-list {
+body:has(.nox-page) #main-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
   max-width: none !important;
 }
 
-#main-wrapper > .container,
-#main-wrapper > .container-fluid {
+body:has(.nox-page) #main-wrapper .container,
+body:has(.nox-page) #main-wrapper .container-fluid,
+body:has(.nox-page) #main,
+body:has(.nox-page) #main > .row,
+body:has(.nox-page) #main > .row > div {
   width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* NOX 홈 화면 */
+/* 홈 화면 */
 .nox-page {
   width: 100%;
-  max-width: none;
   min-height: 100vh;
-  margin: 0 auto;
+  margin: 0;
   padding: 0 5% 70px;
   box-sizing: border-box;
   background: #050505;
   color: #e8e8e8;
 }
 
-#main-wrapper > .container {
-  max-width: none !important;
-  padding: 0 !important;
-}
-
+/* 상단 메뉴 */
 .nox-navbar {
   display: flex;
   align-items: center;
@@ -64,6 +65,7 @@ layout: default
   font-family: Georgia, serif;
   font-size: 28px;
   color: #f0f0f0;
+  text-decoration: none;
 }
 
 .nox-links {
@@ -81,6 +83,7 @@ layout: default
   color: white;
 }
 
+/* 중앙 달 심볼 */
 .nox-hero {
   text-align: center;
   padding: 40px 0 35px;
@@ -90,6 +93,7 @@ layout: default
   display: block;
   width: 260px;
   max-width: 80%;
+  height: auto;
   margin: auto;
 }
 
@@ -107,6 +111,7 @@ layout: default
   color: #aaa;
 }
 
+/* 게시글 + 오른쪽 영역 */
 .nox-content {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr);
@@ -154,6 +159,7 @@ layout: default
   color: #888;
 }
 
+/* 오른쪽 사이드 영역 */
 .nox-side-section {
   border-bottom: 1px solid #333;
   padding: 20px 0;
@@ -172,6 +178,7 @@ layout: default
   text-decoration: none;
 }
 
+/* 모바일 */
 @media (max-width: 800px) {
   .nox-navbar {
     flex-direction: column;
@@ -186,33 +193,8 @@ layout: default
     grid-template-columns: 1fr;
   }
 }
-
-  /* NOX 홈 화면 너비 수정 */
-body:has(.nox-page) {
-  background: #050505 !important;
-}
-
-body:has(.nox-page) #main-wrapper,
-body:has(.nox-page) #main,
-body:has(.nox-page) #main > .container,
-body:has(.nox-page) #main > .container-fluid,
-body:has(.nox-page) #main > .row,
-body:has(.nox-page) #main > .row > div {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-body:has(.nox-page) #main {
-  padding: 0 !important;
-}
-
-body:has(.nox-page) #main-wrapper {
-  padding: 0 !important;
-}
-
 </style>
+
 
 <div class="nox-page">
 
