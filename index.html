@@ -211,40 +211,72 @@ html, body {
   width: 100%;
 }
 
-/* NOX 천문학 테마 프레임 */
+/* NOX 외곽 프레임 */
 .nox-page {
   position: relative;
   isolation: isolate;
   width: calc(100% - 60px);
   min-height: calc(100vh - 60px);
   margin: 30px auto;
-  border: 1px solid #555;
-  border-radius: 22px;
+  border: none;
+  border-radius: 0;
   overflow: hidden;
 }
 
-/* 왼쪽 위 / 오른쪽 아래 별 */
-.nox-page::before,
-.nox-page::after {
-  position: absolute;
-  z-index: 3;
-  color: #f2f2f2;
-  font-size: 23px;
-  line-height: 1;
-  text-shadow: 0 0 10px #aaa;
-  pointer-events: none;
-}
-
+/* 네 모서리의 곡선 프레임 */
 .nox-page::before {
-  content: "✦";
-  top: -10px;
-  left: -8px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(210, 210, 210, 0.45);
+  border-radius: 24px;
+  pointer-events: none;
+  z-index: 2;
 }
 
+/* 기존 별 장식 비활성화 */
 .nox-page::after {
-  content: "✦";
-  bottom: -10px;
-  right: -8px;
+  content: none;
+}
+
+/* 네 모서리 별 장식 */
+.nox-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.nox-corners span {
+  position: absolute;
+  color: #f1f1f1;
+  font-size: 17px;
+  line-height: 1;
+  text-shadow: 0 0 7px rgba(255,255,255,0.35);
+}
+
+.nox-corners span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform: translate(-35%, -35%);
+}
+
+.nox-corners span:nth-child(2) {
+  top: 0;
+  right: 0;
+  transform: translate(35%, -35%);
+}
+
+.nox-corners span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform: translate(-35%, 35%);
+}
+
+.nox-corners span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  transform: translate(35%, 35%);
 }
 
 </style>
@@ -252,6 +284,13 @@ html, body {
 <body>
 
 <div class="nox-page">
+
+ <div class="nox-corners" aria-hidden="true">
+   <span>✦</span>
+   <span>✦</span>
+   <span>✦</span>
+   <span>✦</span>
+ </div>
 
   <nav class="nox-navbar">
     <a class="nox-brand" href="{{ '/' | relative_url }}">✦ Nox</a>
