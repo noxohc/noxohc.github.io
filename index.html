@@ -180,6 +180,67 @@ html, body {
     grid-template-columns: 1fr;
   }
 }
+  
+/* NOX 외곽 은색 프레임 */
+.nox-page {
+  position: relative;
+  border: 1px solid #353535;
+  border-radius: 24px;
+  margin: 20px auto;
+  width: calc(100% - 40px);
+  min-height: calc(100vh - 40px);
+}
+
+/* 프레임 모서리 별 장식 */
+.nox-page::before,
+.nox-page::after {
+  position: absolute;
+  color: #e8e8e8;
+  font-size: 22px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.nox-page::before {
+  content: "✦";
+  top: -12px;
+  left: -9px;
+}
+
+.nox-page::after {
+  content: "✦";
+  bottom: -12px;
+  right: -9px;
+}
+  
+/* 상단 메뉴 은색 포인트 */
+.nox-navbar {
+  border-bottom: 1px solid #353535;
+}
+
+.nox-brand {
+  letter-spacing: 1px;
+}
+
+.nox-links a {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nox-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #ddd;
+  transition: width 0.25s ease;
+}
+
+.nox-links a:hover::after {
+  width: 100%;
+}
 </style>
 </head>
 <body>
