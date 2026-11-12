@@ -189,6 +189,37 @@ layout: default
     grid-template-columns: 1fr;
   }
 }
+
+  /* NOX 홈 화면 너비 수정 */
+body:has(.nox-page) {
+  background: #050505 !important;
+}
+
+body:has(.nox-page) #main-wrapper,
+body:has(.nox-page) #main,
+body:has(.nox-page) #main > .container,
+body:has(.nox-page) #main > .container-fluid,
+body:has(.nox-page) #main > .row,
+body:has(.nox-page) #main > .row > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body:has(.nox-page) #main {
+  padding: 0 !important;
+}
+
+body:has(.nox-page) #main-wrapper {
+  padding: 0 !important;
+}
+
+body:has(.nox-page) .nox-page {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: none !important;
+}
 </style>
 
 <div class="nox-page">
