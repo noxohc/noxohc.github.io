@@ -212,11 +212,6 @@ body:has(.nox-page) #main-wrapper {
   padding: 0 !important;
 }
 
-body:has(.nox-page) .nox-page {
-  box-sizing: border-box;
-  width: 100% !important;
-  max-width: none !important;
-}
 </style>
 
 <div class="nox-page">
@@ -265,7 +260,7 @@ body:has(.nox-page) .nox-page {
 
       <h2 class="nox-section-title">✦ Recent Posts</h2>
 
-      {% for post in site.posts limit: 6 %}
+      {% for post in site.posts offset: 1 limit: 6 %}
       <a class="nox-post" href="{{ post.url | relative_url }}">
         <h3>{{ post.title }}</h3>
         <p>{{ post.description | default: post.excerpt | strip_html | truncate: 110 }}</p>
