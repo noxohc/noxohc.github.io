@@ -1,0 +1,65 @@
+/* NOX - Celestial Theme */
+
+:root {
+  --nox-bg: #050505;
+  --nox-text: #e8e8e8;
+  --nox-muted: #999999;
+  --nox-line: #444444;
+  --nox-silver: #c8c8c8;
+}
+
+/* NOX 전용 화면의 기본 스타일 */
+.nox-page {
+  min-height: 100vh;
+  background: var(--nox-bg);
+  color: var(--nox-text);
+}
+
+/* 상단 메뉴 */
+.nox-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 45px;
+  border-bottom: 1px solid var(--nox-line);
+}
+
+.nox-navbar a {
+  color: var(--nox-text);
+  text-decoration: none;
+}
+
+/* 달 심볼 */
+.nox-moon {
+  display: block;
+  width: 260px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* 은색 테두리 카드 */
+.nox-card {
+  border: 1px solid var(--nox-line);
+  border-radius: 12px;
+  padding: 25px;
+  background: #0b0b0b;
+}
+
+/* 별 장식 */
+.nox-decoration {
+  color: var(--nox-silver);
+  font-size: 20px;
+}
+
+/* 모바일 화면 */
+@media (max-width: 768px) {
+  .nox-navbar {
+    padding: 18px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .nox-moon {
+    width: 190px;
+  }
+}
