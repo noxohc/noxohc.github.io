@@ -247,87 +247,11 @@ html, body {
   right: -8px;
 }
 
-/* 달 주변의 희미한 천체 궤도 */
-.nox-hero {
-  position: relative;
-  isolation: isolate;
-}
-
-.nox-hero::before {
-  content: "";
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  top: -230px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 1px dotted rgba(210, 210, 210, 0.16);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.nox-hero::after {
-  content: "✧";
-  position: absolute;
-  top: 32%;
-  right: 20%;
-  color: #ddd;
-  font-size: 24px;
-  text-shadow: 0 0 12px #aaa;
-  pointer-events: none;
-}
-
-/* 배경 별 장식 */
-.nox-stars {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.nox-stars span {
-  position: absolute;
-  color: #ddd;
-  text-shadow: 0 0 10px rgba(255,255,255,0.4);
-}
-
-.nox-stars span:nth-child(1) {
-  top: 3%;
-  left: 7%;
-  font-size: 23px;
-}
-
-.nox-stars span:nth-child(2) {
-  top: 24%;
-  left: 23%;
-  font-size: 15px;
-}
-
-.nox-stars span:nth-child(3) {
-  top: 18%;
-  right: 22%;
-  font-size: 19px;
-}
-
-.nox-stars span:nth-child(4) {
-  top: 39%;
-  right: 8%;
-  font-size: 13px;
-}
-
 </style>
 </head>
 <body>
 
 <div class="nox-page">
-  
-  <div class="nox-stars" aria-hidden="true">
-  <span>✦</span>
-  <span>✧</span>
-  <span>✦</span>
-  <span>✧</span>
-</div>
 
   <nav class="nox-navbar">
     <a class="nox-brand" href="{{ '/' | relative_url }}">✦ Nox</a>
