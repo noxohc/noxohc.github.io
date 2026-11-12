@@ -44,9 +44,35 @@ html, body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  border-bottom: 1px solid #303030;
-  padding: 22px 10px;
+  min-height: 80px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(190,190,190,0.16);
 }
+
+.nox-navbar a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  transition: color 0.2s ease;
+}
+
+.nox-navbar a:hover {
+  color: #fff;
+}
+
+.nox-navbar a[aria-current="page"] {
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .nox-navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
 
 .nox-brand {
   font-family: Georgia, serif;
@@ -117,26 +143,61 @@ html, body {
   margin: 25px 0;
 }
 
-/* 오른쪽 사이드 영역 */
-.nox-side-section {
-  border-bottom: 1px solid #333;
-  padding: 20px 0;
+/* Sidebar */
+.nox-content aside {
+  border-left: 1px solid rgba(190, 190, 190, 0.22);
+  padding-left: 30px;
 }
 
+.nox-side-section {
+  margin-bottom: 38px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid rgba(190, 190, 190, 0.18);
+}
+
+.nox-side-section:last-child {
+  border-bottom: none;
+}
+
+.nox-side-section h2,
 .nox-side-section h3 {
+  margin: 0 0 18px;
   font-family: Georgia, serif;
+  font-size: 17px;
   font-weight: normal;
-  color: #eee;
+  letter-spacing: 1px;
+  color: #e4e4e4;
+}
+
+.nox-side-section p {
+  margin: 0;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
 .nox-side-section a {
+  color: #aaa;
   display: block;
-  color: #bbb;
-  padding: 5px 0;
   text-decoration: none;
+  font-size: 13px;
+  line-height: 2.2;
+  transition: color 0.2s ease;
 }
 
-/* 모바일 */
+.nox-side-section a:hover {
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .nox-content aside {
+    border-left: none;
+    border-top: 1px solid rgba(190, 190, 190, 0.22);
+    padding-left: 0;
+    padding-top: 30px;
+  }
+}
+
 @media (max-width: 800px) {
   .nox-navbar {
     flex-direction: column;
@@ -152,7 +213,6 @@ html, body {
   }
 }
 
-  
 /* 상단 메뉴 은색 포인트 */
 .nox-navbar {
   border-bottom: 1px solid #353535;
@@ -380,6 +440,39 @@ html, body {
     align-items: flex-start;
     gap: 10px;
   }
+}
+
+
+/* Hero */
+.nox-hero {
+  text-align: center;
+  padding: 55px 20px 65px;
+}
+
+.nox-moon {
+  display: block;
+  width: 230px;
+  max-width: 65%;
+  height: auto;
+  margin: 0 auto 12px;
+  object-fit: contain;
+  filter: grayscale(1);
+}
+
+.nox-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: normal;
+  letter-spacing: 5px;
+  color: #f0f0f0;
+}
+
+.nox-hero p {
+  margin: 15px 0 0;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #888;
 }
 
 </style>
