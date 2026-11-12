@@ -2,60 +2,252 @@
 layout: default
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/nox.css' | relative_url }}">
+
 <style>
-/* NOX 홈 화면 */
-.nox-hero {
-  text-align: center;
-  padding: 45px 15px 55px;
+/* 홈 화면에서만 기존 Chirpy 레이아웃 숨기기 */
+#sidebar,
+#topbar-wrapper,
+#panel-wrapper {
+  display: none !important;
+}
+
+#main-wrapper {
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+#main-wrapper > .container {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+.nox-page {
+  min-height: 100vh;
   background: #050505;
   color: #e8e8e8;
-  position: relative;
-  overflow: hidden;
+  padding: 0 5% 70px;
+}
+
+.nox-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid #303030;
+  padding: 22px 10px;
+}
+
+.nox-brand {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  color: #f0f0f0;
+}
+
+.nox-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.nox-links a {
+  color: #d4d4d4;
+  text-decoration: none;
+}
+
+.nox-links a:hover {
+  color: white;
+}
+
+.nox-hero {
+  text-align: center;
+  padding: 40px 0 35px;
 }
 
 .nox-moon {
   display: block;
   width: 260px;
   max-width: 80%;
-  height: auto;
-  margin: 0 auto 10px;
+  margin: auto;
 }
 
 .nox-title {
   font-family: Georgia, serif;
   font-size: 48px;
-  font-weight: 400;
-  letter-spacing: 3px;
-  margin: 0;
+  font-weight: normal;
   color: #f0f0f0;
+  margin: 12px 0;
 }
 
 .nox-subtitle {
   font-size: 11px;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   color: #aaa;
-  margin-top: 12px;
 }
 
-.nox-star {
-  margin-top: 25px;
-  color: #ccc;
-  font-size: 18px;
+.nox-content {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(230px, 1fr);
+  gap: 45px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.nox-section-title {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: normal;
+  border-bottom: 1px solid #444;
+  padding-bottom: 12px;
+  margin: 25px 0;
+}
+
+.nox-post {
+  display: block;
+  padding: 20px;
+  margin-bottom: 14px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: #eee;
+  text-decoration: none;
+}
+
+.nox-post:hover {
+  border-color: #aaa;
+  color: white;
+}
+
+.nox-post h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+
+.nox-post p {
+  color: #aaa;
+  margin: 0 0 10px;
+}
+
+.nox-post small {
+  color: #888;
+}
+
+.nox-side-section {
+  border-bottom: 1px solid #333;
+  padding: 20px 0;
+}
+
+.nox-side-section h3 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  color: #eee;
+}
+
+.nox-side-section a {
+  display: block;
+  color: #bbb;
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  .nox-navbar {
+    flex-direction: column;
+  }
+
+  .nox-links {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .nox-content {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
-<div class="nox-hero">
-  <img
-    class="nox-moon"
-    src="{{ '/assets/img/nox_moon.png' | relative_url }}"
-    alt="Nox Moon Symbol"
-  >
+<div class="nox-page">
 
-  <h1 class="nox-title">Nox</h1>
+  <nav class="nox-navbar">
+    <a class="nox-brand" href="{{ '/' | relative_url }}">✦ Nox</a>
 
-  <p class="nox-subtitle">
-    SECURITY · SYSTEM · RESEARCH · NOTES
-  </p>
+    <div class="nox-links">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/categories/' | relative_url }}">Categories</a>
+      <a href="{{ '/tags/' | relative_url }}">Tags</a>
+      <a href="{{ '/archives/' | relative_url }}">Archives</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+    </div>
+  </nav>
 
-  <div class="nox-star">✦</div>
+  <section class="nox-hero">
+    <img
+      class="nox-moon"
+      src="{{ '/assets/img/nox_moon.png' | relative_url }}"
+      alt="Nox Moon"
+    >
+
+    <h1 class="nox-title">Nox</h1>
+
+    <p class="nox-subtitle">
+      SECURITY · SYSTEM · RESEARCH · NOTES
+    </p>
+  </section>
+
+  <div class="nox-content">
+
+    <main>
+
+      <h2 class="nox-section-title">✦ Featured Post</h2>
+
+      {% assign featured = site.posts.first %}
+
+      {% if featured %}
+      <a class="nox-post" href="{{ featured.url | relative_url }}">
+        <h3>{{ featured.title }}</h3>
+        <p>{{ featured.description | default: featured.excerpt | strip_html | truncate: 110 }}</p>
+        <small>{{ featured.date | date: "%Y-%m-%d" }}</small>
+      </a>
+      {% endif %}
+
+      <h2 class="nox-section-title">✦ Recent Posts</h2>
+
+      {% for post in site.posts limit: 6 %}
+      <a class="nox-post" href="{{ post.url | relative_url }}">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 110 }}</p>
+        <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+      </a>
+      {% endfor %}
+
+    </main>
+
+    <aside>
+
+      <section class="nox-side-section">
+        <h3>✦ About</h3>
+        <p>Exploring cybersecurity and development</p>
+      </section>
+
+      <section class="nox-side-section">
+        <h3>✦ Categories</h3>
+
+        {% for category in site.categories %}
+        {% capture category_url %}/categories/{{ category[0] | slugify }}/{% endcapture %}
+        <a href="{{ category_url | relative_url }}">
+          {{ category[0] }} ({{ category[1].size }})
+        </a>
+        {% endfor %}
+      </section>
+
+      <section class="nox-side-section">
+        <h3>✦ Tags</h3>
+
+        {% for tag in site.tags limit: 12 %}
+        <span>{{ tag[0] }}</span>
+        {% endfor %}
+      </section>
+
+    </aside>
+
+  </div>
 </div>
