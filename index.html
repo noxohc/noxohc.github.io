@@ -117,35 +117,6 @@ html, body {
   margin: 25px 0;
 }
 
-.nox-post {
-  display: block;
-  padding: 20px;
-  margin-bottom: 14px;
-  border: 1px solid #333;
-  border-radius: 10px;
-  color: #eee;
-  text-decoration: none;
-}
-
-.nox-post:hover {
-  border-color: #aaa;
-  color: white;
-}
-
-.nox-post h3 {
-  margin: 0 0 8px;
-  font-size: 19px;
-}
-
-.nox-post p {
-  color: #aaa;
-  margin: 0 0 10px;
-}
-
-.nox-post small {
-  color: #888;
-}
-
 /* 오른쪽 사이드 영역 */
 .nox-side-section {
   border-bottom: 1px solid #333;
@@ -223,60 +194,192 @@ html, body {
   overflow: hidden;
 }
 
-/* 네 모서리의 곡선 프레임 */
-.nox-page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(210, 210, 210, 0.45);
-  border-radius: 24px;
-  pointer-events: none;
-  z-index: 2;
+
+/* NOX 외곽 프레임 */
+.nox-page {
+  position: relative;
+  isolation: isolate;
+  width: calc(100% - 60px);
+  min-height: calc(100vh - 60px);
+  margin: 30px auto;
+  border: 1px solid rgba(210, 210, 210, 0.38);
+  border-radius: 22px;
+  overflow: visible;
 }
 
-/* 기존 별 장식 비활성화 */
-.nox-page::after {
-  content: none;
-}
-
-/* 네 모서리 별 장식 */
+/* 네 모서리 별 */
 .nox-corners {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 3;
+  z-index: 5;
 }
 
 .nox-corners span {
   position: absolute;
-  color: #f1f1f1;
-  font-size: 17px;
+  color: #f0f0f0;
+  font-size: 13px;
   line-height: 1;
-  text-shadow: 0 0 7px rgba(255,255,255,0.35);
+  text-shadow: 0 0 5px rgba(255,255,255,0.25);
 }
 
 .nox-corners span:nth-child(1) {
   top: 0;
   left: 0;
-  transform: translate(-35%, -35%);
+  transform: translate(-20%, -20%);
 }
 
 .nox-corners span:nth-child(2) {
   top: 0;
   right: 0;
-  transform: translate(35%, -35%);
+  transform: translate(20%, -20%);
 }
 
 .nox-corners span:nth-child(3) {
   bottom: 0;
   left: 0;
-  transform: translate(-35%, 35%);
+  transform: translate(-20%, 20%);
 }
 
 .nox-corners span:nth-child(4) {
   bottom: 0;
   right: 0;
-  transform: translate(35%, 35%);
+  transform: translate(20%, 20%);
+}
+
+/* 배경의 희미한 천체 궤도선 */
+.nox-orbits {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nox-orbits span {
+  position: absolute;
+  width: 850px;
+  height: 500px;
+  border: 1px dotted rgba(200,200,200,0.12);
+  border-radius: 50%;
+}
+
+.orbit-left {
+  top: 130px;
+  left: -650px;
+  transform: rotate(-15deg);
+}
+
+.orbit-right {
+  top: 120px;
+  right: -650px;
+  transform: rotate(15deg);
+}
+
+/* 콘텐츠는 궤도선보다 앞에 표시 */
+.nox-navbar,
+.nox-hero,
+.nox-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Featured Post - 이미지 없는 카드 */
+.nox-featured {
+  display: block;
+  min-height: 170px;
+  padding: 25px 30px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  color: #eee;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.nox-featured:hover {
+  border-color: #aaa;
+}
+
+.nox-featured-label {
+  display: block;
+  color: #999;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.nox-featured h3 {
+  margin: 12px 0;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: normal;
+  color: #eee;
+}
+
+.nox-featured p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.nox-featured-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  color: #999;
+  font-size: 12px;
+}
+
+.nox-featured-arrow {
+  font-size: 23px;
+  color: #ddd;
+}
+
+/* Recent Posts - 구분선 목록 */
+.nox-recent-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 12px;
+  border-bottom: 1px solid #303030;
+  color: #eee;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.nox-recent-post:hover {
+  background: rgba(255,255,255,0.035);
+}
+
+.nox-recent-info h3 {
+  margin: 0 0 6px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: #eee;
+}
+
+.nox-recent-info p {
+  margin: 0;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.nox-recent-date {
+  color: #999;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  .nox-recent-post {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
 
 </style>
@@ -292,6 +395,11 @@ html, body {
    <span>✦</span>
  </div>
 
+<div class="nox-orbits" aria-hidden="true">
+  <span class="orbit-left"></span>
+  <span class="orbit-right"></span>
+</div>
+  
   <nav class="nox-navbar">
     <a class="nox-brand" href="{{ '/' | relative_url }}">✦ Nox</a>
 
@@ -326,23 +434,36 @@ html, body {
 
       {% assign featured = site.posts.first %}
 
-      {% if featured %}
-      <a class="nox-post" href="{{ featured.url | relative_url }}">
-        <h3>{{ featured.title }}</h3>
-        <p>{{ featured.description | default: featured.excerpt | strip_html | truncate: 110 }}</p>
-        <small>{{ featured.date | date: "%Y-%m-%d" }}</small>
-      </a>
-      {% endif %}
+{% if featured %}
+<a class="nox-featured" href="{{ featured.url | relative_url }}">
+  <div class="nox-featured-info">
+    <span class="nox-featured-label">FEATURED ARTICLE</span>
+    <h3>{{ featured.title }}</h3>
+    <p>{{ featured.description | default: featured.excerpt | strip_html | truncate: 110 }}</p>
+
+    <div class="nox-featured-meta">
+      <span>{{ featured.date | date: "%Y-%m-%d" }}</span>
+      <span class="nox-featured-arrow">→</span>
+    </div>
+  </div>
+</a>
+{% endif %}
+
 
       <h2 class="nox-section-title">✦ Recent Posts</h2>
 
-      {% for post in site.posts offset: 1 limit: 6 %}
-      <a class="nox-post" href="{{ post.url | relative_url }}">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 110 }}</p>
-        <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-      </a>
-      {% endfor %}
+{% for post in site.posts offset: 1 limit: 6 %}
+<a class="nox-recent-post" href="{{ post.url | relative_url }}">
+  <div class="nox-recent-info">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.description | default: post.excerpt | strip_html | truncate: 110 }}</p>
+  </div>
+
+  <span class="nox-recent-date">
+    {{ post.date | date: "%Y-%m-%d" }}
+  </span>
+</a>
+{% endfor %}
 
     </main>
 
