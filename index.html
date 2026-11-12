@@ -1,4 +1,61 @@
 ---
 layout: home
-# Index page
 ---
+
+<style>
+/* NOX 홈 화면 */
+.nox-hero {
+  text-align: center;
+  padding: 45px 15px 55px;
+  background: #050505;
+  color: #e8e8e8;
+  position: relative;
+  overflow: hidden;
+}
+
+.nox-moon {
+  display: block;
+  width: 260px;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 10px;
+}
+
+.nox-title {
+  font-family: Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin: 0;
+  color: #f0f0f0;
+}
+
+.nox-subtitle {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #aaa;
+  margin-top: 12px;
+}
+
+.nox-star {
+  margin-top: 25px;
+  color: #ccc;
+  font-size: 18px;
+}
+</style>
+
+<div class="nox-hero">
+  <img
+    class="nox-moon"
+    src="{{ '/assets/img/nox-moon.png' | relative_url }}"
+    alt="Nox Moon Symbol"
+  >
+
+  <h1 class="nox-title">Nox</h1>
+
+  <p class="nox-subtitle">
+    SECURITY · SYSTEM · RESEARCH · NOTES
+  </p>
+
+  <div class="nox-star">✦</div>
+</div>
