@@ -1,43 +1,30 @@
 ---
-layout: default
+layout: null
 ---
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nox | Security Archive</title>
+  
 <link rel="stylesheet" href="{{ '/assets/css/nox.css' | relative_url }}">
 
 
 <style>
 /* NOX - Homepage */
 
-/* 기존 Chirpy 요소 숨기기 */
-body:has(.nox-page) #sidebar,
-body:has(.nox-page) #topbar-wrapper,
-body:has(.nox-page) #panel-wrapper {
-  display: none !important;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #050505;
 }
 
-/* Chirpy 레이아웃 너비 제한 해제 */
-body:has(.nox-page) {
-  background: #050505 !important;
-}
-
-body:has(.nox-page) #main-wrapper {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  max-width: none !important;
-}
-
-body:has(.nox-page) #main-wrapper .container,
-body:has(.nox-page) #main-wrapper .container-fluid,
-body:has(.nox-page) #main,
-body:has(.nox-page) #main > .row,
-body:has(.nox-page) #main > .row > div {
-  width: 100% !important;
-  max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+* {
+  box-sizing: border-box;
 }
 
 /* 홈 화면 */
@@ -194,7 +181,8 @@ body:has(.nox-page) #main > .row > div {
   }
 }
 </style>
-
+</head>
+<body>
 
 <div class="nox-page">
 
@@ -282,3 +270,5 @@ body:has(.nox-page) #main > .row > div {
 
   </div>
 </div>
+</body>
+</html>
