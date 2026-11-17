@@ -58,3 +58,12 @@ body,
 .nox-archive-item {
   font-family: 'Marcellus', 'Malgun Gothic', serif;
 }
+
+/* 제목과 부제목 사이 간격 조정 */
+.nox-title {
+  margin-bottom: 0;
+}
+
+.nox-subtitle {
+  margin-top: 10px;
+}
