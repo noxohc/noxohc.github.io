@@ -2,26 +2,46 @@
 layout: nox
 ---
 
-<div class="nox-category-detail">
-  <p class="nox-category-label">✦ CATEGORY ARCHIVE</p>
-
-  <div class="nox-category-posts">
-    {% assign category_posts = site.categories[page.title] %}
-
-    {% for post in category_posts %}
-      <a class="nox-category-item" href="{{ post.url | relative_url }}">
-        <span class="nox-category-sparkle">✦</span>
-
-        <span class="nox-category-name">
-          {{ post.title }}
-        </span>
-
-        <span class="nox-category-count">
-          {{ post.date | date: "%Y.%m.%d" }}
-        </span>
-
-        <span class="nox-category-arrow">→</span>
-      </a>
-    {% endfor %}
+<div class="nox-detail-header">
+  <div class="nox-detail-moon">
+    <img src="{{ '/assets/img/nox_moon.png' | relative_url }}" alt="Nox Moon">
   </div>
+
+  <div class="nox-detail-heading">
+    <p class="nox-detail-label">C A T E G O R Y</p>
+    <h1>{{ page.title }}</h1>
+    <p class="nox-detail-description">
+      Explore posts, research, and technical notes.
+    </p>
+  </div>
+</div>
+
+{% assign category_posts = site.categories[page.title] %}
+
+<div class="nox-detail-topline">
+  <span>{{ category_posts.size }} posts</span>
+  <span>Newest first</span>
+</div>
+
+<div class="nox-detail-posts">
+  {% for post in category_posts %}
+    <a class="nox-detail-post" href="{{ post.url | relative_url }}">
+      <span class="nox-detail-star">✦</span>
+
+      <span class="nox-detail-post-info">
+        <span class="nox-detail-post-title">{{ post.title }}</span>
+        <span class="nox-detail-post-tags">
+          {% for tag in post.tags limit:3 %}
+            {{ tag }}{% unless forloop.last %} · {% endunless %}
+          {% endfor %}
+        </span>
+      </span>
+
+      <span class="nox-detail-post-date">
+        {{ post.date | date: "%Y.%m.%d" }}
+      </span>
+
+      <span class="nox-detail-post-arrow">→</span>
+    </a>
+  {% endfor %}
 </div>
