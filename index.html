@@ -224,46 +224,6 @@ html, body {
   overflow: visible;
 }
 
-/* 네 모서리 별 */
-.nox-corners {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.nox-corners span {
-  position: absolute;
-  color: #f0f0f0;
-  font-size: 13px;
-  line-height: 1;
-  text-shadow: 0 0 5px rgba(255,255,255,0.25);
-}
-
-.nox-corners span:nth-child(1) {
-  top: 0;
-  left: 0;
-  transform: translate(-20%, -20%);
-}
-
-.nox-corners span:nth-child(2) {
-  top: 0;
-  right: 0;
-  transform: translate(20%, -20%);
-}
-
-.nox-corners span:nth-child(3) {
-  bottom: 0;
-  left: 0;
-  transform: translate(-20%, 20%);
-}
-
-.nox-corners span:nth-child(4) {
-  bottom: 0;
-  right: 0;
-  transform: translate(20%, 20%);
-}
-
 /* 콘텐츠는 궤도선보다 앞에 표시 */
 .nox-navbar,
 .nox-hero,
@@ -374,7 +334,24 @@ html, body {
   padding: 15px 20px 15px;
 }
 
+/* 부제목 아래 중앙 스파클 */
+.nox-hero::after {
+  content: "✦";
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 120px;
+  margin: 12px auto 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1;
+  color: #e8e8e8;
+  text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
 .nox-moon {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 380px;
   max-width: 85%;
@@ -385,6 +362,9 @@ html, body {
 }
 
 .nox-title {
+  position: relative;
+  z-index: 3;
+  isolation: isolate;
   margin: -5px 0 0;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(42px, 4vw, 52px);
@@ -451,13 +431,6 @@ body,
 <body>
 
 <div class="nox-page">
-
- <div class="nox-corners" aria-hidden="true">
-   <span>✦</span>
-   <span>✦</span>
-   <span>✦</span>
-   <span>✦</span>
- </div>
   
   <nav class="nox-navbar">
     <a class="nox-brand" href="{{ '/' | relative_url }}">✦ Nox</a>
