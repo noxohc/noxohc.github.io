@@ -273,7 +273,145 @@
         color: #999;
         font-size: 14px;
       }
-  
+
+      /* Category detail page */
+      
+      .nox-detail-header {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin: -20px 0 28px;
+      }
+      
+      /* 카테고리 상세 페이지 - 달 심볼 왼쪽 절반 */
+      .nox-detail-moon {
+        width: 190px;
+        height: 300px;
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+      }
+         
+      /* 달 심볼 오른쪽 절반만 표시 */
+      .nox-detail-moon img {
+        position: absolute;
+        width: 380px;
+        max-width: none;
+        height: auto;
+        top: 50%;
+        right: 0;
+        left: auto;
+        transform: translateY(-50%);
+        filter: grayscale(1);
+      }
+
+      .nox-detail-heading h1 {
+        margin: 8px 0 12px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(34px, 4vw, 52px);
+        font-weight: 500;
+        line-height: 1.15;
+      }
+      
+      .nox-detail-label {
+        color: #aaa;
+        font-size: 11px;
+        letter-spacing: 4px;
+      }
+      
+      .nox-detail-description {
+        color: #aaa;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      
+      .nox-detail-topline {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        color: #bbb;
+        font-size: 13px;
+      }
+      
+      .nox-detail-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .nox-detail-post {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        min-height: 82px;
+        padding: 18px 24px;
+        border: 1px solid rgba(210,210,210,.32);
+        border-radius: 11px;
+        color: #e8e8e8;
+        text-decoration: none;
+        transition: background .2s, border-color .2s;
+      }
+      
+      .nox-detail-post:hover {
+        background: rgba(255,255,255,.04);
+        border-color: rgba(230,230,230,.7);
+      }
+      
+      .nox-detail-star {
+        font-size: 22px;
+        color: #d8d8d8;
+      }
+      
+      .nox-detail-post-info {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        flex-direction: column;
+        gap: 7px;
+      }
+      
+      .nox-detail-post-title {
+        font-family: 'Marcellus', 'Malgun Gothic', serif;
+        font-size: 17px;
+      }
+      
+      .nox-detail-post-tags {
+        color: #888;
+        font-size: 12px;
+      }
+      
+      .nox-detail-post-date {
+        flex-shrink: 0;
+        color: #bbb;
+        font-size: 12px;
+      }
+      
+      .nox-detail-post-arrow {
+        color: #ddd;
+        font-size: 19px;
+      }
+      
+      @media (max-width: 600px) {
+        .nox-detail-header {
+          flex-direction: column;
+          text-align: center;
+          gap: 0;
+        }
+      
+        .nox-detail-moon {
+          width: 170px;
+        }
+      
+        .nox-detail-post {
+          gap: 12px;
+          padding: 16px;
+        }
+      
+        .nox-detail-post-date {
+          display: none;
+        }
+      }
+    
   </style>
 </head>
 
@@ -292,6 +430,8 @@
       </div>
     </nav>
 
+    {% unless page.layout == 'category' %}
+    
     <section class="nox-hero">
       <img
         class="nox-moon"
@@ -306,6 +446,8 @@
       </p>
     </section>
 
+    {% endunless %}
+    
     <div class="nox-content">
 
       <main class="nox-main">
