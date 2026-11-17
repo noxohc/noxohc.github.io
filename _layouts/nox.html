@@ -411,6 +411,116 @@
           display: none;
         }
       }
+
+        /* NOX POST DESIGN */
+        
+        .nox-post {
+          max-width: 950px;
+          margin: 15px auto 60px;
+        }
+        
+        .nox-post-header {
+          padding: 20px 0 30px;
+        }
+        
+        .nox-post-category {
+          color: #aaa;
+          font-size: 12px;
+          letter-spacing: 2px;
+        }
+        
+        .nox-post-title {
+          margin: 18px 0;
+          color: #f0f0f0;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(36px, 4vw, 56px);
+          font-weight: 500;
+          line-height: 1.2;
+        }
+        
+        .nox-post-meta {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          color: #999;
+          font-size: 12px;
+        }
+        
+        .nox-post-divider {
+          height: 1px;
+          margin: 25px 0;
+          background: rgba(210,210,210,0.25);
+        }
+        
+        .nox-post-body {
+          color: #ccc;
+          font-size: 15px;
+          line-height: 1.9;
+          overflow-wrap: anywhere;
+        }
+        
+        .nox-post-body h2,
+        .nox-post-body h3 {
+          margin-top: 40px;
+          color: #e8e8e8;
+          font-family: 'Marcellus', 'Malgun Gothic', serif;
+          font-weight: normal;
+        }
+        
+        .nox-post-body a {
+          color: #d8d8d8;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+        
+        .nox-post-body img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 8px;
+        }
+        
+        .nox-post-body pre {
+          padding: 20px;
+          overflow-x: auto;
+          border: 1px solid #333;
+          border-radius: 10px;
+          background: #111;
+          line-height: 1.6;
+        }
+        
+        .nox-post-body code {
+          font-family: Consolas, monospace;
+        }
+        
+        .nox-post-body table {
+          display: block;
+          max-width: 100%;
+          overflow-x: auto;
+          border-collapse: collapse;
+        }
+        
+        .nox-post-body th,
+        .nox-post-body td {
+          padding: 12px;
+          border: 1px solid #444;
+        }
+        
+        .nox-post-navigation {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          padding: 20px 0;
+        }
+        
+        .nox-post-navigation a {
+          color: #bbb;
+          font-size: 13px;
+          text-decoration: none;
+        }
+        
+        .nox-post-navigation a:hover {
+          color: #fff;
+        }
     
   </style>
 </head>
@@ -430,7 +540,7 @@
       </div>
     </nav>
 
-    {% unless page.layout == 'category' %}
+    {% unless page.layout == 'category' or page.layout == 'post' %}
     
     <section class="nox-hero">
       <img
@@ -453,11 +563,25 @@
       <main class="nox-main">
         {{ content }}
       </main>
-
-      <aside class="nox-side">
+      
+    <aside class="nox-side">
+    
+      {% if page.layout == 'post' %}
+    
+        <h3>✦ Contents</h3>
+    
+        <div class="nox-post-toc">
+          {% include toc.html html=content %}
+        </div>
+    
+      {% else %}
+    
         <h3>✦ About</h3>
         <p>Exploring cybersecurity and development.</p>
-      </aside>
+    
+      {% endif %}
+    
+    </aside>
 
     </div>
 
