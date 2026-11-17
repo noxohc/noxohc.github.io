@@ -1,0 +1,60 @@
+/* ==================================
+   NOX - COMMON TYPOGRAPHY
+   ================================== */
+
+/* 기본 글씨체 */
+body,
+.nox-page {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+}
+
+/* 왼쪽 상단 로고 */
+.nox-navbar a.nox-brand {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* 중앙 페이지 제목 */
+.nox-title {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* 상단 메뉴 */
+.nox-navbar a,
+.nox-links a {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+}
+
+/* 부제목 */
+.nox-subtitle,
+.nox-hero p {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+}
+
+/* 섹션 제목 */
+.nox-section-title,
+.nox-content h2,
+.nox-side h3,
+.nox-side-section h3 {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+}
+
+/* 게시글 제목 */
+.nox-featured h3,
+.nox-recent-info h3,
+.nox-category-name,
+.nox-archive-title {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+}
+
+/* 본문과 설명 */
+.nox-content,
+.nox-main,
+.nox-side,
+.nox-featured p,
+.nox-recent-info p,
+.nox-side-section p,
+.nox-side-section a,
+.nox-category-item,
+.nox-archive-item {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+}
