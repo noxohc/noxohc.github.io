@@ -212,7 +212,67 @@
         color: #bbb;
         font-size: 19px;
       }
-
+    
+      /* Archives 연도 제목 */
+      .nox-archive-year {
+        margin: 0 0 20px;
+        padding-top: 10px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 32px;
+        font-weight: 500;
+        color: #e8e8e8;
+      }
+      
+      /* 연도별 게시글 목록 */
+      .nox-archive-group {
+        margin-bottom: 40px;
+        border: 1px solid rgba(210,210,210,0.25);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      
+      .nox-archive-item {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        min-height: 72px;
+        padding: 18px 24px;
+        color: #e8e8e8;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(210,210,210,0.18);
+        transition: background 0.2s ease;
+      }
+      
+      .nox-archive-item:last-child {
+        border-bottom: none;
+      }
+      
+      .nox-archive-item:hover {
+        background: rgba(255,255,255,0.035);
+      }
+      
+      .nox-archive-date {
+        flex-shrink: 0;
+        color: #888;
+        font-size: 13px;
+      }
+      
+      .nox-archive-title {
+        flex: 1;
+        font-family: 'Marcellus', serif;
+        font-size: 17px;
+      }
+      
+      .nox-archive-arrow {
+        color: #bbb;
+        font-size: 19px;
+      }
+      
+      .nox-archive-empty {
+        color: #999;
+        font-size: 14px;
+      }
+  
   </style>
 </head>
 
