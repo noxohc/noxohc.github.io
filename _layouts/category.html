@@ -1,0 +1,27 @@
+---
+layout: nox
+---
+
+<div class="nox-category-detail">
+  <p class="nox-category-label">✦ CATEGORY ARCHIVE</p>
+
+  <div class="nox-category-posts">
+    {% assign category_posts = site.categories[page.title] %}
+
+    {% for post in category_posts %}
+      <a class="nox-category-item" href="{{ post.url | relative_url }}">
+        <span class="nox-category-sparkle">✦</span>
+
+        <span class="nox-category-name">
+          {{ post.title }}
+        </span>
+
+        <span class="nox-category-count">
+          {{ post.date | date: "%Y.%m.%d" }}
+        </span>
+
+        <span class="nox-category-arrow">→</span>
+      </a>
+    {% endfor %}
+  </div>
+</div>
