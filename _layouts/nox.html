@@ -166,6 +166,53 @@
         padding: 25px 0 0;
       }
     }
+    
+      /* Categories 목록 */
+      .nox-category-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nox-category-item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        min-height: 78px;
+        padding: 20px 24px;
+        border: 1px solid rgba(210,210,210,0.25);
+        border-radius: 10px;
+        color: #e8e8e8;
+        text-decoration: none;
+        transition: border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .nox-category-item:hover {
+        border-color: rgba(230,230,230,0.65);
+        background: rgba(255,255,255,0.035);
+      }
+      
+      .nox-category-sparkle {
+        color: #d8d8d8;
+        font-size: 19px;
+      }
+      
+      .nox-category-name {
+        flex: 1;
+        font-family: 'Marcellus', serif;
+        font-size: 19px;
+      }
+      
+      .nox-category-count {
+        color: #888;
+        font-size: 12px;
+      }
+      
+      .nox-category-arrow {
+        color: #bbb;
+        font-size: 19px;
+      }
+
   </style>
 </head>
 
