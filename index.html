@@ -76,14 +76,15 @@ html, body {
 
 .nox-brand {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
+  font-size: 44px;
   font-weight: 500;
   letter-spacing: 0.5px;
+  line-height: 1;
   color: #f0f0f0;
   text-decoration: none;
   white-space: nowrap;
+  flex-shrink: 0;
 }
-
 
 .nox-links {
   display: flex;
@@ -186,10 +187,6 @@ html, body {
   .nox-content {
     grid-template-columns: 1fr;
   }
-}
-
-.nox-brand {
-  letter-spacing: 1px;
 }
 
 .nox-links a {
@@ -365,7 +362,7 @@ html, body {
   position: relative;
   z-index: 3;
   isolation: isolate;
-  margin: -5px 0 0;
+  margin: -25px 0 0;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(42px, 4vw, 52px);
   font-weight: 500;
