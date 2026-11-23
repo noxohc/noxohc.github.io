@@ -24,6 +24,13 @@ layout: nox
 </div>
 
 <div class="nox-detail-posts">
+  
+  {% if category_posts.size == 0 %}
+    <p class="nox-empty-message">
+      No posts in this category yet.
+    </p>
+  {% endif %}
+  
   {% for post in category_posts %}
     <a class="nox-detail-post" href="{{ post.url | relative_url }}">
       <span class="nox-detail-star">✦</span>
