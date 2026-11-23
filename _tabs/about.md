@@ -4,7 +4,7 @@ title: About
 icon: fas fa-info-circle
 order: 4
 ---
-<div class="nox-about">
+<div class="nox-about" markdown="1">
   
 ## ✦ About Nox
 
