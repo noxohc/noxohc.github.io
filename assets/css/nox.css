@@ -1,4 +1,11 @@
+/* NOX - Celestial Theme */
 
+:root {
+  --nox-bg: #050505;
+  --nox-text: #e8e8e8;
+  --nox-muted: #999999;
+  --nox-line: #444444;
+  --nox-silver: #c8c8c8;
 /* ==================================
    NOX - HOME CONTENT
    ================================== */
@@ -36,6 +43,11 @@
   letter-spacing: 2px;
 }
 
+/* NOX 전용 화면의 기본 스타일 */
+.nox-page {
+  min-height: 100vh;
+  background: var(--nox-bg);
+  color: var(--nox-text);
 .nox-featured h3 {
   margin: 12px 0;
   font-size: 22px;
@@ -43,6 +55,8 @@
   color: #eee;
 }
 
+/* 상단 메뉴 */
+.nox-navbar {
 .nox-featured p {
   margin: 0;
   color: #aaa;
@@ -52,13 +66,18 @@
 
 .nox-featured-meta {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding: 22px 45px;
+  border-bottom: 1px solid var(--nox-line);
   align-items: center;
   margin-top: 20px;
   color: #999;
   font-size: 12px;
 }
 
+.nox-navbar a {
+  color: var(--nox-text);
 .nox-featured-arrow {
   font-size: 23px;
   color: #ddd;
@@ -77,10 +96,22 @@
   transition: background .2s ease;
 }
 
+/* 달 심볼 */
+.nox-moon {
+  display: block;
+  width: 260px;
+  max-width: 80%;
+  margin: 0 auto;
 .nox-recent-post:hover {
   background: rgba(255,255,255,.035);
 }
 
+/* 은색 테두리 카드 */
+.nox-card {
+  border: 1px solid var(--nox-line);
+  border-radius: 12px;
+  padding: 25px;
+  background: #0b0b0b;
 .nox-recent-info h3 {
   margin: 0 0 6px;
   font-size: 18px;
@@ -88,6 +119,10 @@
   color: #eee;
 }
 
+/* 별 장식 */
+.nox-decoration {
+  color: var(--nox-silver);
+  font-size: 20px;
 .nox-recent-info p {
   margin: 0;
   color: #999;
@@ -95,6 +130,13 @@
   line-height: 1.5;
 }
 
+/* 모바일 화면 */
+@media (max-width: 768px) {
+  .nox-navbar {
+    padding: 18px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
 .nox-recent-date {
   color: #999;
   font-size: 12px;
@@ -121,6 +163,8 @@
   color: #e4e4e4;
 }
 
+  .nox-moon {
+    width: 190px;
 .nox-side-section p {
   margin: 0;
   color: #999;
@@ -149,4 +193,3 @@
     gap: 10px;
   }
 }
-
