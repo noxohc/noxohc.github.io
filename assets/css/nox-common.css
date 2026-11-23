@@ -315,3 +315,57 @@ body,
   border-color: #bbb;
 }
 
+.nox-empty-message {
+  padding: 30px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+/* MOBILE FINAL ADJUSTMENTS */
+
+@media (max-width: 600px) {
+
+  .nox-post-title {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+
+  .nox-post-meta {
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  .nox-post-body {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .nox-post-body h2 {
+    font-size: 21px;
+  }
+
+  .nox-post-body h3 {
+    font-size: 17px;
+  }
+
+  .nox-post-nav-card {
+    padding: 18px;
+    min-height: 85px;
+  }
+
+  .nox-category-item,
+  .nox-detail-post {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .nox-category-name,
+  .nox-detail-post-title {
+    font-size: 15px;
+  }
+
+  .nox-category-count {
+    font-size: 11px;
+  }
+
+}
