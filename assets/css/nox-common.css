@@ -272,3 +272,46 @@ body,
   }
 }
 
+
+/* POST CATEGORY & TAGS */
+
+.nox-post-category {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.nox-post-category a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.nox-post-category a:hover {
+  color: #fff;
+}
+
+.nox-post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.nox-post-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid rgba(210,210,210,.25);
+  border-radius: 6px;
+  color: #aaa;
+  font-size: 12px;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+
+.nox-post-tag:hover {
+  color: #fff;
+  border-color: #bbb;
+}
+
