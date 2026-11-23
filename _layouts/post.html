@@ -37,20 +37,29 @@ layout: nox
 
   <div class="nox-post-divider"></div>
 
-  <nav class="nox-post-navigation">
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}">
-        ← {{ page.previous.title }}
-      </a>
-    {% else %}
-      <span></span>
-    {% endif %}
+  
+<nav class="nox-post-navigation">
 
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}">
-        {{ page.next.title }} →
-      </a>
-    {% endif %}
-  </nav>
+  {% if page.previous %}
+    <a class="nox-post-nav-card"
+       href="{{ page.previous.url | relative_url }}">
+      <span class="nox-post-nav-label">← PREVIOUS POST</span>
+      <span class="nox-post-nav-title">{{ page.previous.title }}</span>
+    </a>
+  {% else %}
+    <span class="nox-post-nav-placeholder"></span>
+  {% endif %}
+
+  {% if page.next %}
+    <a class="nox-post-nav-card nox-post-nav-next"
+       href="{{ page.next.url | relative_url }}">
+      <span class="nox-post-nav-label">NEXT POST →</span>
+      <span class="nox-post-nav-title">{{ page.next.title }}</span>
+    </a>
+  {% else %}
+    <span class="nox-post-nav-placeholder"></span>
+  {% endif %}
+
+</nav>
 
 </article>
