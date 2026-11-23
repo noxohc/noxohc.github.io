@@ -211,3 +211,64 @@ body,
   color: #ffffff;
   text-decoration-color: #ffffff;
 }
+
+
+/* ==================================
+   NOX - POST NAVIGATION
+   ================================== */
+
+.nox-post-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 35px;
+  padding: 0;
+}
+
+.nox-post-nav-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 100px;
+  padding: 22px 24px;
+  border: 1px solid rgba(210,210,210,.28);
+  border-radius: 11px;
+  color: #e8e8e8;
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+}
+
+.nox-post-nav-card:hover {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(230,230,230,.65);
+}
+
+.nox-post-nav-label {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.nox-post-nav-title {
+  color: #e8e8e8;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.nox-post-nav-next {
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .nox-post-navigation {
+    grid-template-columns: 1fr;
+  }
+
+  .nox-post-nav-placeholder {
+    display: none;
+  }
+}
+
