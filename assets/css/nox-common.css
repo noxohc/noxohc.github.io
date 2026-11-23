@@ -369,3 +369,36 @@ body,
   }
 
 }
+
+/* ==================================
+   NOX - ABOUT TYPOGRAPHY
+   ================================== */
+
+.nox-about {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #aaa;
+}
+
+.nox-about p,
+.nox-about li {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #aaa;
+}
+
+.nox-about h2 {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #e8e8e8;
+}
+
+.nox-about h3 {
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #ddd;
+}
