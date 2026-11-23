@@ -1,7 +1,5 @@
 ---
 layout: null
-layout: nox
-title: Nox
 ---
 
 <!DOCTYPE html>
@@ -269,7 +267,6 @@ html, body {
   font-weight: normal;
   color: #eee;
 }
-<h2 class="nox-section-title">✦ Featured Post</h2>
 
 .nox-featured p {
   margin: 0;
@@ -277,7 +274,6 @@ html, body {
   font-size: 14px;
   line-height: 1.6;
 }
-{% assign featured = site.posts.first %}
 
 .nox-featured-meta {
   display: flex;
@@ -431,13 +427,8 @@ html, body {
     <main>
 
       <h2 class="nox-section-title">✦ Featured Post</h2>
-{% if featured %}
-  <a class="nox-featured" href="{{ featured.url | relative_url }}">
-    <div class="nox-featured-info">
-      <span class="nox-featured-label">FEATURED ARTICLE</span>
 
       {% assign featured = site.posts.first %}
-      <h3>{{ featured.title | escape }}</h3>
 
 {% if featured %}
 <a class="nox-featured" href="{{ featured.url | relative_url }}">
@@ -445,26 +436,17 @@ html, body {
     <span class="nox-featured-label">FEATURED ARTICLE</span>
     <h3>{{ featured.title }}</h3>
     <p>{{ featured.description | default: featured.excerpt | strip_html | truncate: 110 }}</p>
-      <p>
-        {{ featured.description | default: featured.excerpt | strip_html | truncate: 110 }}
-      </p>
 
     <div class="nox-featured-meta">
       <span>{{ featured.date | date: "%Y-%m-%d" }}</span>
       <span class="nox-featured-arrow">→</span>
-      <div class="nox-featured-meta">
-        <span>{{ featured.date | date: "%Y-%m-%d" }}</span>
-        <span class="nox-featured-arrow">→</span>
-      </div>
     </div>
   </div>
 </a>
-  </a>
 {% endif %}
 
 
       <h2 class="nox-section-title">✦ Recent Posts</h2>
-<h2 class="nox-section-title">✦ Recent Posts</h2>
 
 {% for post in site.posts offset: 1 limit: 6 %}
 <a class="nox-recent-post" href="{{ post.url | relative_url }}">
@@ -472,8 +454,6 @@ html, body {
     <h3>{{ post.title }}</h3>
     <p>{{ post.description | default: post.excerpt | strip_html | truncate: 110 }}</p>
   </div>
-  <a class="nox-recent-post" href="{{ post.url | relative_url }}">
-    <div class="nox-recent-info">
 
   <span class="nox-recent-date">
     {{ post.date | date: "%Y-%m-%d" }}
@@ -492,7 +472,6 @@ html, body {
 
       <section class="nox-side-section">
         <h3>✦ Categories</h3>
-      <h3>{{ post.title | escape }}</h3>
 
         {% for category in site.categories %}
         {% capture category_url %}/categories/{{ category[0] | slugify }}/{% endcapture %}
@@ -501,9 +480,6 @@ html, body {
         </a>
         {% endfor %}
       </section>
-      <p>
-        {{ post.description | default: post.excerpt | strip_html | truncate: 110 }}
-      </p>
 
       <section class="nox-side-section">
         <h3>✦ Tags</h3>
@@ -514,14 +490,8 @@ html, body {
       </section>
 
     </aside>
-    </div>
 
   </div>
 </div>
 </body>
 </html>
-    <span class="nox-recent-date">
-      {{ post.date | date: "%Y-%m-%d" }}
-    </span>
-  </a>
-{% endfor %}
