@@ -521,6 +521,41 @@
         .nox-post-navigation a:hover {
           color: #fff;
         }
+
+        
+        /* Nox Post Table of Contents */
+        
+        .nox-post-toc {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          position: sticky;
+          top: 30px;
+        }
+        
+        .nox-post-toc a {
+          display: block;
+          color: #999;
+          font-size: 13px;
+          line-height: 1.6;
+          text-decoration: none;
+          transition: color .2s ease;
+        }
+        
+        .nox-post-toc a:hover {
+          color: #f0f0f0;
+        }
+        
+        .nox-post-toc .nox-toc-sub {
+          padding-left: 18px;
+          font-size: 12px;
+          color: #777;
+        }
+        
+        .nox-post-body h2,
+        .nox-post-body h3 {
+          scroll-margin-top: 35px;
+        }
     
   </style>
 </head>
@@ -570,9 +605,9 @@
     
         <h3>✦ Contents</h3>
     
-        <div class="nox-post-toc">
-          {% include toc.html html=content %}
-        </div>
+       <nav class="nox-post-toc" id="nox-post-toc"
+             aria-label="Table of contents">
+       </nav>
     
       {% else %}
     
@@ -586,5 +621,40 @@
     </div>
 
   </div>
+  
+{% if page.layout == 'post' %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toc = document.getElementById('nox-post-toc');
+  const headings = document.querySelectorAll(
+    '.nox-post-body h2, .nox-post-body h3'
+  );
+
+  if (!toc) return;
+
+  if (headings.length === 0) {
+    toc.textContent = 'No sections yet.';
+    return;
+  }
+
+  headings.forEach(function (heading, index) {
+    if (!heading.id) {
+      heading.id = 'nox-section-' + index;
+    }
+
+    const link = document.createElement('a');
+    link.href = '#' + encodeURIComponent(heading.id);
+    link.textContent = heading.textContent.trim();
+
+    if (heading.tagName === 'H3') {
+      link.classList.add('nox-toc-sub');
+    }
+
+    toc.appendChild(link);
+  });
+});
+</script>
+{% endif %}
+
 </body>
 </html>
