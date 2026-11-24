@@ -402,3 +402,34 @@ body,
   font-weight: 400;
   color: #ddd;
 }
+
+/* ==================================
+   NOX - SIDEBAR TAGS
+   ================================== */
+
+.nox-sidebar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.nox-sidebar-tags a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid rgba(210,210,210,.25);
+  border-radius: 5px;
+  background: rgba(255,255,255,.02);
+  color: #bcbcbc;
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.nox-sidebar-tags a:hover {
+  color: #fff;
+  border-color: #aaa;
+  background: rgba(255,255,255,.06);
+}
