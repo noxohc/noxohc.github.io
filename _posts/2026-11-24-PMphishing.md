@@ -1,5 +1,5 @@
 ---
-title: "[논문 리뷰] Phishing Attacks against Password Manager Browser Extensions"
+title: "[Research paper review] Phishing Attacks against Password Manager Browser Extensions"
 date: 2026-11-24 17:47:00 +0900
 categories: ["Research / Conferences"]
 tags: [Phishing, Password Manager, Web Security, USENIX Security 2025]
@@ -18,8 +18,8 @@ description: "비밀번호 관리자 확장 프로그램을 대상으로 한 피
 | 페이지 | 7857–7876 |
 | 연구 분야 | Web Security, Phishing, Usable Security |
 
-- 공식 학회 페이지: https://www.usenix.org/conference/usenixsecurity25/presentation/anliker
-- 논문 원문: https://www.usenix.org/system/files/usenixsecurity25-anliker.pdf
+공식 학회 페이지: https://www.usenix.org/conference/usenixsecurity25/presentation/anliker
+논문 원문: https://www.usenix.org/system/files/usenixsecurity25-anliker.pdf
 
 ### 논문 선정 이유
 
@@ -95,7 +95,6 @@ description: "비밀번호 관리자 확장 프로그램을 대상으로 한 피
 웹사이트의 콘텐츠가 표시되는 영역이다. 웹사이트는 HTML, CSS, JavaScript 등을 이용하여 해당 영역에 표시되는 내용을 제어할 수 있다.
 
 ![Figure 1](/assets/img/PMphishing/figure1.png)
-
 *Figure 1. 비밀번호 관리자 확장 프로그램의 주요 UI 구성 요소 (출처: Anliker et al., 2025)*
 
 문제는 비밀번호 관리자 확장 프로그램에서 제공하는 팝업이 신뢰할 수 있는 브라우저 인터페이스에 속하더라도 화면상으로는 Viewport 위에 겹쳐서 표시된다는 것이다.
@@ -105,7 +104,6 @@ description: "비밀번호 관리자 확장 프로그램을 대상으로 한 피
 논문에서는 이러한 문제를 Trusted UI Confusion, 즉 신뢰할 수 있는 사용자 인터페이스와 신뢰할 수 없는 인터페이스 사이의 혼동으로 설명한다.
 
 ![Figure 2](/assets/img/PMphishing/figure2.png)
-
 *Figure 2. 비밀번호 관리자의 브라우저 팝업 페이지와 애플리케이션 창 (출처: Anliker et al., 2025)*
 
 비밀번호 관리자마다 인증 화면을 제공하는 방식에는 차이가 있다. 위 그림에서 LastPass는 브라우저 팝업 페이지를 사용하고, Bitwarden은 별도의 애플리케이션 창을 사용한다. 이러한 방식에서도 인증 화면이 웹사이트 콘텐츠 영역과 시각적으로 겹칠 수 있다는 문제가 존재한다.
@@ -115,7 +113,6 @@ description: "비밀번호 관리자 확장 프로그램을 대상으로 한 피
 논문의 Figure 3에서는 1Password의 실제 팝업과 위조된 팝업을 비교한다.
 
 ![Figure 3](/assets/img/PMphishing/figure3.png)
-
 *Figure 3. 1Password의 위조된 팝업(a)과 실제 팝업(b) 비교 (출처: Anliker et al., 2025)*
 
 두 화면은 전체적인 디자인과 비밀번호 입력창의 위치 등에서 매우 유사하지만 몇 가지 차이점이 존재한다.
@@ -257,7 +254,6 @@ Attack Success Rate = (140 / 448) × 100 = 31.25%
 논문의 Table 2에서는 비밀번호 관리자별 공격 성공률을 다음과 같이 제시한다.
 
 ![Table 2](/assets/img/PMphishing/table2.png)
-
 *Table 2. 비밀번호 관리자별 피싱 실험 결과 (출처: Anliker et al., 2025)*
 
 | 비밀번호 관리자 | 감지 인원 | 입력 인원 | 공격 성공률 |
@@ -468,5 +464,5 @@ https://www.usenix.org/conference/usenixsecurity25/presentation/anliker
 
 [2] Enis Ulqinaku, Hala Assal, AbdelRahman Abdou, Sonia Chiasson, and Srdjan Čapkun. *Is Real-time Phishing Eliminated with FIDO? Social Engineering Downgrade Attacks against FIDO Protocols*. 30th USENIX Security Symposium, 2021, pp. 3811–3828.
 
-- [공식 학회 페이지](https://www.usenix.org/conference/usenixsecurity21/presentation/ulqinaku)
-- [논문 원문 PDF](https://www.usenix.org/system/files/sec21-ulqinaku.pdf)
+공식 학회 페이지: https://www.usenix.org/conference/usenixsecurity21/presentation/ulqinaku
+논문 원문: https://www.usenix.org/system/files/sec21-ulqinaku.pdf
