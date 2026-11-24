@@ -1,0 +1,57 @@
+
+---
+layout: nox
+---
+
+<div class="nox-detail-header">
+
+  <div class="nox-detail-moon">
+    <img src="{{ '/assets/img/nox_moon.png' | relative_url }}"
+         alt="Nox Moon">
+  </div>
+
+  <div class="nox-detail-heading">
+    <span class="nox-detail-label">TAG</span>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="nox-detail-description">
+      Articles tagged with {{ page.title | escape }}
+    </p>
+  </div>
+
+</div>
+
+<div class="nox-detail-topline">
+  <span>✦ Posts</span>
+  <span>{{ page.posts.size }} Articles</span>
+</div>
+
+<div class="nox-detail-posts">
+
+  {% for post in page.posts %}
+
+    <a class="nox-detail-post"
+       href="{{ post.url | relative_url }}">
+
+      <span class="nox-detail-star">✦</span>
+
+      <div class="nox-detail-post-info">
+        <span class="nox-detail-post-title">
+          {{ post.title | escape }}
+        </span>
+
+        <span class="nox-detail-post-tags">
+          {{ post.categories | join: " · " }}
+        </span>
+      </div>
+
+      <span class="nox-detail-post-date">
+        {{ post.date | date: "%Y-%m-%d" }}
+      </span>
+
+      <span class="nox-detail-post-arrow">→</span>
+
+    </a>
+
+  {% endfor %}
+
+</div>
