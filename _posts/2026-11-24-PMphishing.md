@@ -1,5 +1,5 @@
 ---
-title: "[Research paper review] Phishing Attacks against Password Manager Browser Extensions"
+title: "[Research paper Review] Phishing Attacks against Password Manager Browser Extensions"
 date: 2026-11-24 17:47:00 +0900
 categories: ["Research / Conferences"]
 tags: [Phishing, Password Manager, Web Security, USENIX Security 2025]
@@ -18,8 +18,8 @@ description: "비밀번호 관리자 확장 프로그램을 대상으로 한 피
 | 페이지 | 7857–7876 |
 | 연구 분야 | Web Security, Phishing, Usable Security |
 
-공식 학회 페이지: https://www.usenix.org/conference/usenixsecurity25/presentation/anliker
-논문 원문: https://www.usenix.org/system/files/usenixsecurity25-anliker.pdf
+- 공식 학회 페이지: https://www.usenix.org/conference/usenixsecurity25/presentation/anliker
+- 논문 원문: https://www.usenix.org/system/files/usenixsecurity25-anliker.pdf
 
 ### 논문 선정 이유
 
@@ -460,9 +460,9 @@ MetaMask와 같은 브라우저 기반 암호화폐 지갑 역시 웹사이트�
 
 [1] Claudio Anliker, Daniele Lain, and Srdjan Čapkun. *Phishing Attacks against Password Manager Browser Extensions*. 34th USENIX Security Symposium, 2025, pp. 7857–7876.
 
-https://www.usenix.org/conference/usenixsecurity25/presentation/anliker
+- https://www.usenix.org/conference/usenixsecurity25/presentation/anliker
 
 [2] Enis Ulqinaku, Hala Assal, AbdelRahman Abdou, Sonia Chiasson, and Srdjan Čapkun. *Is Real-time Phishing Eliminated with FIDO? Social Engineering Downgrade Attacks against FIDO Protocols*. 30th USENIX Security Symposium, 2021, pp. 3811–3828.
 
-공식 학회 페이지: https://www.usenix.org/conference/usenixsecurity21/presentation/ulqinaku
-논문 원문: https://www.usenix.org/system/files/sec21-ulqinaku.pdf
+- 공식 학회 페이지: https://www.usenix.org/conference/usenixsecurity21/presentation/ulqinaku
+- 논문 원문: https://www.usenix.org/system/files/sec21-ulqinaku.pdf
