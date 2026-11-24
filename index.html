@@ -484,9 +484,14 @@ html, body {
       <section class="nox-side-section">
         <h3>✦ Tags</h3>
 
+      <div class="nox-sidebar-tags">
         {% for tag in site.tags limit: 12 %}
-        <span>{{ tag[0] }}</span>
-        {% endfor %}
+          {% capture tag_url %}/tags/{{ tag[0] | slugify }}/{% endcapture %}
+           <a href="{{ tag_url | relative_url }}">
+              {{ tag[0] }}
+            </a>
+          {% endfor %}
+        </div>
       </section>
 
     </aside>
