@@ -64,6 +64,7 @@ SQL 쿼리 실행
 결과 반환
 ```
 
+
 이 과정에서 사용자 입력값이 SQL문에 안전하지 않은 방식으로 포함되면 SQL Injection이 발생할 수 있다.
 
 ## 4. SQL Injection이란?
@@ -86,11 +87,13 @@ query = "SELECT * FROM products WHERE name = '" + product + "'"
 cursor.execute(query)
 ```
 
+
 사용자가 `abcd`을 입력하면 다음과 같은 SQL문이 실행된다.
 
 ```sql
 SELECT * FROM products WHERE name = 'abcd';
 ```
+
 
 그러나 입력값에 SQL 문법으로 해석될 수 있는 문자가 포함되면 기존 SQL문의 구조가 변경될 수 있다.
 
@@ -99,6 +102,7 @@ SELECT * FROM products WHERE name = 'abcd';
 ```sql
 SELECT * FROM products WHERE name = 'ab'cd';
 ```
+
 
 이처럼 입력값이 단순한 데이터가 아니라 SQL 문법의 일부로 해석되는 것이 SQL Injection의 핵심 문제이다.
 
@@ -152,6 +156,7 @@ query = "SELECT * FROM products WHERE name = '" + product + "'"
 
 cursor.execute(query)
 ```
+
 
 **개선 후 코드**
 
