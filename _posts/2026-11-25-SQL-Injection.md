@@ -4,7 +4,6 @@ date: 2026-11-25 18:00:00 +0900
 categories: ["Research / Conferences"]
 tags: [OWASP, SQL Injection, Web Security, Database]
 ---
-# [OWASP Top 10:2025] SQL Injection의 원리와 대응 방안
 
 ## 1. 주제 선정 이유
 
