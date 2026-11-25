@@ -479,7 +479,7 @@ div.highlighter-rouge {
 
 /* 한글 게시글 제목 크기 조정 */
 .nox-post-title.korean-title {
-  font-size: 1.8rem !important;
+  font-size: 2.0rem !important;
   line-height: 1.4;
   letter-spacing: -0.02em;
 }
