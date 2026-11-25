@@ -483,3 +483,16 @@ div.highlighter-rouge {
   line-height: 1.4;
   letter-spacing: -0.02em;
 }
+
+/* 표 안의 한글 단어 중간 줄바꿈 방지 */
+.nox-post-body table th,
+.nox-post-body table td {
+  word-break: keep-all;
+}
+
+/* 첫 번째 열의 줄바꿈 방지 */
+.nox-post-body table th:first-child,
+.nox-post-body table td:first-child {
+  white-space: nowrap;
+  min-width: 80px;
+}
