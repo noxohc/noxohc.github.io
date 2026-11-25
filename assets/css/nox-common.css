@@ -471,3 +471,8 @@ div.highlight {
     background: #111111 !important;
     padding: 20px !important;
 }
+
+/* 코드 블록 아래쪽 여백 추가 */
+div.highlighter-rouge {
+    margin-bottom: 24px !important;
+}
