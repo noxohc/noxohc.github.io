@@ -76,3 +76,13 @@ layout: nox
 </nav>
 
 </article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.nox-post-title').forEach(function (title) {
+      if (/[가-힣]/.test(title.textContent)) {
+        title.classList.add('korean-title');
+      }
+    });
+  });
+</script>
