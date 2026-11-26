@@ -1,6 +1,6 @@
 ---
 title: "[Knights Frontier] About Me"
-date: 2026-11-24 20:00:00 +0900
+date: 2026-11-24 17:00:00 +0900
 categories: [Research / Conferences]
 tags: [Knights Frontier]
 ---
