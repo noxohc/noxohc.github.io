@@ -8,34 +8,19 @@ layout: null
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nox | Security Archive</title>
-  
-<link rel="stylesheet" href="{{ '/assets/css/nox.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/nox-common.css' | relative_url }}">
 
 <style>
 /* NOX - Homepage */
 
-html, body {
+body {
   margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
   background: #050505;
+  color: #e8e8e8;
+  font-family: 'Marcellus', 'Malgun Gothic', serif;
 }
 
 * {
   box-sizing: border-box;
-}
-
-/* 홈 화면 */
-.nox-page {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0 5% 70px;
-  box-sizing: border-box;
-  background: #050505;
-  color: #e8e8e8;
 }
 
 /* 상단 메뉴 */
@@ -43,10 +28,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
   min-height: 80px;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(190,190,190,0.16);
+  border-bottom: 1px solid #353535;
+  gap: 24px;
 }
 
 .nox-navbar a {
@@ -59,12 +43,14 @@ html, body {
 }
 
 .nox-navbar a.nox-brand {
-  font-size: 37px;
   font-family: 'Cormorant Garamond', serif;
+  font-size: 37px;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  line-height: 1;
   color: #f0f0f0;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: normal;
+  line-height: normal;
 }
 
 .nox-navbar a:hover {
@@ -83,18 +69,6 @@ html, body {
   }
 }
 
-.nox-brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 44px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  line-height: 1;
-  color: #f0f0f0;
-  text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
 .nox-links {
   display: flex;
   flex-wrap: wrap;
@@ -102,8 +76,10 @@ html, body {
 }
 
 .nox-links a {
-  color: #d4d4d4;
+  color: #aaa;
   text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.2px;
 }
 
 .nox-links a:hover {
@@ -221,13 +197,12 @@ html, body {
 /* NOX 외곽 프레임 */
 .nox-page {
   position: relative;
-  isolation: isolate;
   width: calc(100% - 60px);
   min-height: calc(100vh - 60px);
   margin: 30px auto;
-  border: 1px solid rgba(210, 210, 210, 0.38);
+  padding: 0 5% 70px;
+  border: 1px solid rgba(210,210,210,0.38);
   border-radius: 22px;
-  overflow: visible;
 }
 
 /* 콘텐츠는 궤도선보다 앞에 표시 */
@@ -336,58 +311,69 @@ html, body {
 
 /* Hero */
 .nox-hero {
-  text-align: center;
-  padding: 15px 20px 15px;
-}
-
-/* 부제목 아래 중앙 스파클 */
-.nox-hero::after {
-  content: "✦";
-  display: block;
   position: relative;
-  z-index: 3;
-  width: 120px;
-  margin: 12px auto 0;
+  z-index: 1;
   text-align: center;
-  font-size: 12px;
-  line-height: 1;
-  color: #e8e8e8;
-  text-shadow: 0 0 8px rgba(255,255,255,0.3);
+  padding: 15px 20px 35px;
 }
 
 .nox-moon {
-  position: relative;
-  z-index: 1;
   display: block;
   width: 380px;
   max-width: 85%;
   height: auto;
   margin: 0 auto -15px;
-  object-fit: contain;
   filter: grayscale(1);
 }
 
 .nox-title {
   position: relative;
   z-index: 3;
-  isolation: isolate;
-  margin: -25px 0 0;
+  margin: -45px 0 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 4vw, 52px);
+  font-size: 52px;
   font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 1.1;
   color: #f0f0f0;
 }
 
 .nox-subtitle {
-  margin: 5px 0 0;
+  margin: 15px 0 0;
+  color: #aaa;
   font-size: 11px;
   letter-spacing: 3px;
-  color: #aaa;
 }
 
+.nox-hero::after {
+  content: "✦";
+  display: block;
+  margin: 12px auto 0;
+  font-size: 17px;
+  color: #e8e8e8;
+}
+
+@media (max-width: 800px) {
+  .nox-page {
+    width: calc(100% - 24px);
+    margin: 12px auto;
+    padding: 0 20px 40px;
+  }
+
+  .nox-navbar {
+    flex-direction: column;
+    padding: 18px 0;
+    gap: 24px;
+  }
+
+  .nox-content aside {
+    border-left: none;
+    border-top: 1px solid #353535;
+    padding: 25px 0 0;
+  }
+}
+  
 </style>
+  
+<link rel="stylesheet" href="{{ '/assets/css/nox-common.css' | relative_url }}">
 
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
